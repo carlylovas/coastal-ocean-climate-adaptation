@@ -1,0 +1,223 @@
+﻿SPPNAME,Common_Name,COMNAME,MODELED ,VULNERABILITY
+"REDFISH, ACADIAN",NA,Acadian redfish,Yes,Moderate
+"TUNA, ALBACORE",NA,Albacore tuna,No,NA
+ALEWIFE,NA,Alewife,Yes,Very High
+"JACK, AMBERJACK, NK",NA,Amberjack,No,NA
+"EEL, AMERICAN",NA,American eel,No,High
+"DORY, AMERICAN JOHN",NA,American john dory,No,NA
+"LOBSTER, AMERICAN",Lobster,American lobster,Yes,Moderate
+"FLOUNDER, AMERICAN PLAICE",NA,American plaice,Yes,Low
+"SHAD, AMERICAN",NA,American shad,Yes,Very high
+"BONITO, ATLANTIC",NA,Atlantic bonito,No,NA
+"COD, ATLANTIC",Cod,Atlantic cod,Yes,Moderate
+"CROAKER, ATLANTIC",NA,Atlantic croaker,Yes,
+"HALIBUT, ATLANTIC",Halibut,Atlantic halibut,Yes,High
+"HERRING, ATLANTIC",Herring,Atlantic herring,Yes,Low
+"MACKEREL, ATLANTIC",NA,Atlantic mackerel,No,
+"MENHADEN, ATLANTIC",NA,Atlantic menhaden,Yes,
+"SHARK, ATL SHARPNOSE",NA,Atlantic sharpnose shark,No,
+"SHEEPSHEAD, ATLANTIC",NA,Atlantic sheepshead,No,
+"SILVERSIDE, ATLANTIC",NA,Atlantic silverside,No,
+"WOLFFISH, ATLANTIC",NA,Atlantic wolffish,Yes,High
+"SEA BASS, BANK",NA,Bank sea bass,No,
+"JACK, BAR",NA,Bar jack,No,
+"SKATE, BARNDOOR",NA,Barndoor skate,Yes,
+BARRELFISH,NA,Barrelfish,No,
+BAY ANCHOVY,NA,Bay anchovy,No,
+"SCALLOP, BAY",NA,Bay scallop,No,Very high
+BIG ROUGHY,NA,Big roughy,No,
+"SHARK, THRESHER, BIGEYE",NA,Bigeye thresher shark,No,
+"TUNA, BIGEYE",NA,Bigeye tuna,No,
+"ROSEFISH, BLACK BELLIED",NA,Black bellied rosefish,No,
+"DRUM, BLACK",NA,Black drum,No,
+"SEA BASS, BLACK",NA,Black sea bass,Yes,
+"SHARK, BLACK TIP",NA,Black tip shark,No,
+"GOOSEFISH, BLACKFIN",NA,Blackfin goosefish,No,
+"TUNA, BLACKFIN",NA,Blackfin tuna,No,
+"CLAM, BLOODARC",NA,Bloodarc clam,No,
+"HERRING, BLUE BACK",NA,Blue back herring,No,
+"CATFISH, BLUE",NA,Blue catfish,No,
+"CRAB, BLUE",NA,Blue crab,No,
+"MUSSEL, BLUE",NA,Blue mussel,No,
+"RUNNER, BLUE",NA,Blue runner,No,
+"SHARK, BLUE",NA,Blue shark,No,
+"TUNA, BLUEFIN",NA,Bluefin tuna,No,
+BLUEFISH,NA,Bluefish,Yes,
+"TILEFISH, BLUELINE",NA,Blueline tilefish,No,
+BUTTERFISH,Butterfish,Butterfish,Yes,Low
+"SCALLOP, CALICO",NA,Calico scallop,No,
+"CRAB, CANCER",NA,Cancer crab,No,
+"SHARK, DOGFISH, CHAIN",NA,Chain dogfish,No,
+"WHELK, CHANNELED",NA,Channeled whelk,No,
+"MACKEREL, CHUB",NA,Chub mackerel,No,
+"CLAM, NK",NA,Clam,No,
+"SKATE, CLEARNOSE",NA,Clearnose skate,Yes,
+COBIA,NA,Cobia,No,
+"CARP, COMMON",NA,Common carp,No,
+CONFIDENTIAL,NA,Confidential,No,
+"EEL, CONGER",NA,Conger eel,No,
+"RAY, COWNOSE",NA,Cownose ray,No,
+"CRAB, NK",NA,Crab,No,
+"JACK, CREVALLE",NA,Crevalle jack,No,
+CUNNER,NA,Cunner,No,
+CUSK,NA,Cusk,Yes,High
+"CRAB, DEEPSEA, RED",RedDeepSeaCrab,Deep sea red crab,Yes,Low
+"SNAPPER, DOG",NA,Dog snapper,No,
+"SHARK, DOGFISH, NK",NA,Dogfish shark,No,
+DOLPHINFISH,NA,Dolphinfish,No,
+"DORY, NK",NA,Dory,No,
+"DRUM, NK",NA,Drum,No,
+"SHARK, DUSKY",NA,Dusky shark,No,High
+"OYSTER, EASTERN",NA,Eastern oyster,No,
+"EEL, NK",NA,Eel,No,
+ESCOLAR,NA,Escolar,No,
+"OYSTER, EUROPEAN FLAT",NA,European flat oyster,No,
+"SHARK, FINETOOTH",NA,Finetooth shark,No,
+"FLOUNDER, NK",NA,Flounder,No,
+"FLOUNDER, FOURSPOT",NA,Fourspot flounder,No,
+"CATFISH, FRESHWATER",NA,Freshwater catfish,No,
+"MACKEREL, FRIGATE",NA,Frigate mackerel,No,
+GARFISH,NA,Garfish,No,
+"SHAD, GIZZARD",NA,Gizzard shad,No,
+"TILEFISH, GOLDEN",NA,Golden tilefish,No,
+"TRIGGERFISH, GRAY",NA,Gray triggerfish,No,
+"SHARK, HMHD, GREAT",NA,Great hammerhead shark,No,
+"CRAB, GREEN",NA,Green crab,No,
+"HALIBUT, GREENLAND",NA,Greenland halibut,No,
+"GROUPER, NK",NA,Grouper ,No,
+"BUTTERFISH, GULF",NA,Gulf butterfish,No,
+HADDOCK,Haddock,Haddock,Yes,Low
+HAGFISH,Hagfish,Hagfish,Yes,Moderate
+"SHARK, HAMMERHEAD, NK",NA,Hammerhead shark (NK),No,
+HARVESTFISH,NA,Harvestfish,No,
+"CRAB, HERMIT",NA,Hermit crab,No,
+"HERRING, NK",NA,Herring,No,
+"SHAD, HICKORY",NA,Hickory shad,No,
+HOGFISH,NA,Hogfish,No,
+"CRAB, HORSESHOE",NA,Horseshoe crab,Yes,
+"SQUID, ILLEX",ShortfinSquid,Shortfin squid,Yes,Low
+"PORGY, JOLTHEAD",NA,Jolthead porgy,No,
+"CRAB, JONAH",JonahCrab,Jonah crab,Yes,Moderate
+"MACKEREL, KING",NA,King mackerel,No,
+"WHITING, KING",NA,King whiting,No,
+"WHELK, KNOBBED",NA,Knobbed whelk,No,
+"SHARK, LARGE COASTAL",NA,Large coastal shark,No,
+"SKATE, LITTLE",LittleSkate,Little skate,Yes,Low
+"TUNA, LITTLE TUNNY",NA,Little tunny tuna,No,
+"SQUID, LOLIGINIDAE",NA,Loliginidae squid,No,
+"SQUID, LOLIGO",LongfinSquid,Longfin squid,Yes,Low
+"SHARK, MAKO, LONGFIN",NA,Longfin mako shark,No,
+LUMPFISH,NA,Lumpfish,No,
+"SHARK, MAKO, NK",NA,Mako shark (NK),No,
+"SHRIMP, MANTIS",NA,Mantis shrimp,No,
+MONKFISH/ANGLER/GOOSEFISH,Monkfish,Monkfish,Yes,Low
+"SNAIL, MOON",NA,Moon snail,No,
+"KINGFISH, NORTHERN",NA,Northern kingfish,Yes,
+"PUFFER, NORTHERN",NA,Northern puffer,No,
+"SEAROBIN, NORTHERN",NA,Northern searobin,No,
+"STARGAZER, NORTHERN",NA,Northern stargazer,No,
+"POUT, OCEAN",NA,Ocean pout,Yes,High
+"CLAM, QUAHOG, OCEAN",OceanQuahog,Ocean quahog clam,Yes,Very high
+"SHARK, WHITETIP, OCEANIC",NA,Oceanic whitetip shark,No,
+OCTOPUS,NA,Octopus,No,
+"HAKE, OFFSHORE",NA,Offshore hake,Yes,Low
+OPAH,NA,Opah,No,
+OTHER CRUSTACEANS,NA,Other crustaceans,No,
+"OTHER FISH, PELAGICS",NA,Other pelagic fish,No,
+"SHARK, OTHER PELAGIC",NA,Other pelagic shark,No,
+OTHER SHELLFISH,NA,Other shellfish,No,
+"TOADFISH, OYSTER",NA,Oyster toadfish,No,
+"SHRIMP, PANDALID",NA,Pandalid shrimp,No,
+"SHRIMP, PENAEID",NA,Penaeid shrimp,No,
+"SNAIL, PERIWINKLE",NA,Periwinkle snail,No,
+PIGFISH,NA,Pigfish,No,
+POLLOCK,Pollock,Pollock,Yes,Moderate
+POMFRETS,NA,Pomfrets,No,
+"POMPANO, KILLIFISH",NA,Pompano,No,
+"SHARK, PORBEAGLE",NA,Porbeagle shark,No,High
+"PORGY, NK",NA,Porgy,No,
+"PUFFER, NK",NA,Puffer,No,
+"CLAM, QUAHOG, NK",NA,Quahog clam,No,
+"CLAM, RAZOR",NA,Razor clam,No,
+"HAKE, RED & WHITE MIX",NA,"Red & White hake, mixed",No,
+"DRUM, RED",NA,Red drum,No,
+"HAKE, RED",RedHake,Red hake,Yes,Low
+"PORGY, RED",NA,Red porgy,No,
+"SNAPPER, RED",NA,Red snapper,No,
+RIBBONFISH/DEALFISH,NA,Ribbonfish,No,
+"HERRING, RIVER",NA,River herring,No,
+"CRAB, ROCK",RockCrab,Rock crab,Yes,Low
+"SKATE, ROSETTE",NA,Rosette skate,Yes,
+"HERRING, ROUND",NA,Round herring,No,
+"SHRIMP, ROYAL RED",NA,Royal red shrimp,No,
+"EEL, SAND/LAUNCE",NorthernSandlance,Sand lance,Yes,Moderate
+"PERCH, SAND",NA,Sand perch,No,
+"SHARK, SAND TIGER",NA,Sand tiger shark,No,
+"TILEFISH, SAND",NA,Sand tilefish,No,
+"SHARK, SANDBAR",NA,Sandbar shark,No,
+"SCALLOP, NK",NA,Scallop,No,
+"SHARK, HMHD, SCALLOPED",NA,Scalloped hammerhead shark,No,
+SCULPIN,NA,Sculpin,No,
+SCUP,Scup,Scup,Yes,Moderate
+"CATFISH, SEA",NA,Sea catfish,No,
+SEA CUCUMBER,NA,Sea cucumber,No,
+SEA RAVEN,NA,Sea raven,No,
+"SEAROBIN, NK",NA,Sea robin ,No,
+"SCALLOP, SEA",Scallop,Sea scallop,Yes,High
+"SEA TROUT, NK",NA,Sea trout,No,
+SEA URCHIN,NA,Sea urchin,No,
+"SHARK, NK",NA,Shark,No,
+"SHARK, MAKO, SHORTFIN",NA,Shortfin mako shark,No,
+"SHRIMP, NK",NA,Shrimp,No,
+"HAKE, SILVER & OFFSHORE",NA,Silver and offshore hake,Yes,
+"HAKE, SILVER",SilverHake,Silver hake,Yes,Low
+"SILVERSIDE, NK",NA,Silverside,No,
+"SKATE, NK",NA,Skate,No,
+"TUNA, SKIPJACK",NA,Skipjack tuna,No,
+SMELT,NA,Smelt,No,
+"SHARK, DOGFISH, SMOOTH",NA,Smooth dogfish,Yes,
+"SHARK, HMHD, SMOOTH",NA,Smooth hammerhead shark,No,
+"SKATE, SMOOTH",SmoothSkate,Smooth skate,Yes,Moderate
+"SNAPPER, NK",NA,Snapper,No,
+"GROUPER, SNOWY",NA,Snowy grouper,No,
+"CLAM, SOFT",NA,Soft clam,No,
+SPADEFISH,NA,Spadefish,No,
+"MACKEREL, SPANISH",NA,Spanish mackerel,No,
+"CRAB, SPIDER",NA,Spider crab,No,
+"SHARK, SPINNER",NA,Spinner shark,No,
+"SHARK, DOGFISH, SPINY",SpinyDogfish,Spiny dogfish,Yes,Low
+SPOT,NA,Spot,Yes,
+"HAKE, SPOTTED",NA,Spotted hake,No,
+"WEAKFISH/SEA TROUT, SPOTTED",NA,Spotted weakfish,No,
+STARFISH,NA,Starfish,No,
+"TROUT, STEELHEAD",NA,Steelhead trout,No,
+"BASS, STRIPED",NA,Striped bass,Yes,
+"MULLET, STRIPED",NA,Striped mullet,No,
+"SEAROBIN, STRIPED",NA,Striped sea robin,No,
+"FLOUNDER, SUMMER",SummerFlounder,Summer flounder,Yes,Moderate
+"CLAM, SURF",NA,Surf clam,No,High
+SWORDFISH,NA,Swordfish,No,
+TAUTOG,NA,Tautog,Yes,
+"TURTLE, TERRAPIN",NA,Terrapin turtle,No,
+"SKATE, THORNY",ThornySkate,Thorny skate,Yes,High
+"SHARK, THRESHER, NK",NA,Thresher shark,No,
+"TILEFISH, NK",NA,Tilefish,Yes,High
+TRIGGERFISH,NA,Triggerfish,No,
+"TUNA, NK",NA,Tuna,No,
+UNKNOWN,NA,Unknown,No,
+WAHOO,NA,Wahoo,No,
+"WHELK, WAVED",NA,Waved whelk,No,
+"WEAKFISH/SEA TROUT, SQUETEAGUE",NA,Weakfish,Yes,Moderate
+"WHELK, NK",NA,Whelk,No,
+"HAKE, WHITE",WhiteHake,White hake,Yes,Moderate
+"MULLET, WHITE",NA,White mullet,No,
+"PERCH, WHITE",NA,White perch,No,
+"SHARK, WHITE",NA,White shark,No,
+"FLOUNDER, SAND-DAB/WINDOWPANE",WindowpaneFlounder,Windowpane,No,Low
+"FLOUNDER, WINTER",WinterFlounder,Winter flounder,Yes,Very high
+"SKATE, WINTER",WinterSkate,Winter skate,Yes,Low
+"FLOUNDER, WITCH",WitchFlounder,Witch flounder,Yes,High
+WRECKFISH,NA,Wreckfish,No,
+"PERCH, YELLOW",NA,Yellow perch,No,
+"TUNA, YELLOWFIN",NA,Yellowfin tuna,No,
+"FLOUNDER, YELLOWTAIL",YellowtailFlounder,Yellowtail flounder,Yes,Low
