@@ -9,8 +9,8 @@ editor: visual
 ---
 
 ```{r}
-#| label:   species landings by port
-#| echo:    false
+#| label: species landings by port
+#| echo: false
 #| message: false
 #| warning: false
 
