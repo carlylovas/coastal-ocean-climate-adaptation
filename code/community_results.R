@@ -52,3 +52,5 @@ common_names <- read_csv(here("data", "common_names.csv")) %>%
 
 # Increasing species (emerging opportunities)
 ## tbd
+
+# US Density (Availability * 5.71)
