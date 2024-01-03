@@ -1,0 +1,33 @@
+---
+title: "Species Landings by Ports"
+author: "cslovas"
+format: 
+  html:
+    toc: true
+    self-contained: true
+editor: visual
+---
+
+```{r}
+#| label:   species landings by port
+#| echo:    false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(gmRi)
+library(here)
+library(gt)
+
+select_species <- read_csv(here("data", "ports_filtered.csv"))
+
+select_species %>% 
+  separate_wider_delim(PORT, ",", names = c("Port", "State")) %>%
+  mutate(Port = str_to_title(Port)) %>%
+  unite(Port, State, col = "Port", sep =", ") %>%
+  gt(groupname_col  = "Port",
+     row_group_as_column = TRUE, 
+     id = "Port") %>%
+  tab_stubhead(label = md("**Ports**")) %>%
+  cols_label(COMNAME = md("**Species**"))
+```
