@@ -214,7 +214,7 @@ donut_table <- function(df, PORT){
   table <- patchwork::wrap_elements(table)
   plot  <- wrap_plots(table, chart)
   filename <- paste0(PORT, ".png")
-  ggsave(plot, file = paste0("outputs/landings/final/", filename), height = 8.7, width = 16.9, units="in", bg = "transparent")
+  ggsave(plot, file = paste0("outputs/landings/donut/", filename), height = 8.7, width = 16.9, units="in", bg = "transparent")
 }
 
 plots <- plots %>%
