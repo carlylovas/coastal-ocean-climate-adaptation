@@ -1,20 +1,20 @@
 ﻿SPPNAME,Common_Name,COMNAME,MODELED ,VULNERABILITY
-"REDFISH, ACADIAN",NA,Acadian redfish,Yes,Moderate
+"REDFISH, ACADIAN",Redfish,Acadian redfish,Yes,Moderate
 "TUNA, ALBACORE",NA,Albacore tuna,No,NA
 ALEWIFE,NA,Alewife,Yes,Very High
 "JACK, AMBERJACK, NK",NA,Amberjack,No,NA
 "EEL, AMERICAN",NA,American eel,No,High
 "DORY, AMERICAN JOHN",NA,American john dory,No,NA
 "LOBSTER, AMERICAN",Lobster,American lobster,Yes,Moderate
-"FLOUNDER, AMERICAN PLAICE",NA,American plaice,Yes,Low
+"FLOUNDER, AMERICAN PLAICE",Plaice,American plaice,Yes,Low
 "SHAD, AMERICAN",NA,American shad,Yes,Very high
 "BONITO, ATLANTIC",NA,Atlantic bonito,No,NA
 "COD, ATLANTIC",Cod,Atlantic cod,Yes,Moderate
 "CROAKER, ATLANTIC",NA,Atlantic croaker,Yes,
 "HALIBUT, ATLANTIC",Halibut,Atlantic halibut,Yes,High
 "HERRING, ATLANTIC",Herring,Atlantic herring,Yes,Low
-"MACKEREL, ATLANTIC",NA,Atlantic mackerel,No,
-"MENHADEN, ATLANTIC",NA,Atlantic menhaden,Yes,
+"MACKEREL, ATLANTIC",AtlanticMackerel,Atlantic mackerel,No,Moderate
+"MENHADEN, ATLANTIC",AtlanticMenhaden,Atlantic menhaden,Yes,
 "SHARK, ATL SHARPNOSE",NA,Atlantic sharpnose shark,No,
 "SHEEPSHEAD, ATLANTIC",NA,Atlantic sheepshead,No,
 "SILVERSIDE, ATLANTIC",NA,Atlantic silverside,No,
@@ -30,7 +30,7 @@ BIG ROUGHY,NA,Big roughy,No,
 "TUNA, BIGEYE",NA,Bigeye tuna,No,
 "ROSEFISH, BLACK BELLIED",NA,Black bellied rosefish,No,
 "DRUM, BLACK",NA,Black drum,No,
-"SEA BASS, BLACK",NA,Black sea bass,Yes,
+"SEA BASS, BLACK",BlackSeaBass,Black sea bass,Yes,High
 "SHARK, BLACK TIP",NA,Black tip shark,No,
 "GOOSEFISH, BLACKFIN",NA,Blackfin goosefish,No,
 "TUNA, BLACKFIN",NA,Blackfin tuna,No,
