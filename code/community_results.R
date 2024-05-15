@@ -14,7 +14,6 @@ community_footprints_baseline <- paste0(projection_res_path, "baseline_community
 stat_areas_annual             <- paste0(projection_res_path, "annual_small_footprint_szone_overlap_projections.csv")
 stat_areas_baseline           <- paste0(projection_res_path, "baseline_small_footprint_szone_overlap_projections.csv")
 
-
 community_results   <- read_csv(community_footprints_annual) %>% filter(!region %in% c("PORTSMOUTH, NH", "SCITUATE, MA", "STONINGTON, ME"))
 community_baselines <- read_csv(community_footprints_baseline) %>% filter(!region %in% c("PORTSMOUTH, NH", "SCITUATE, MA", "STONINGTON, ME"))
 stat_area_results   <- read_csv(stat_areas_annual)
@@ -51,6 +50,21 @@ crossing_points %>%
                                                       bquote('5.4\u00B0F'),
                                                       bquote('7.2\u00B0F')))) -> crossing_points
 
+## Crossing points table ####
+library(gt)
+crossing_points %>% 
+  # filter(Scenario == "CMIP6-SSP5_85" & Variable == "SST") %>%
+  select(Threshold_Year, Celsius_Labels, Fahrenheit_Lab) %>%
+  relocate(Threshold_Year, .after = Fahrenheit_Lab) %>%
+  gt() %>%
+  tab_header(title = md("**Temperature Crossing Points**"), 
+             subtitle = md("*based on vibez*")) %>%
+  cols_label(
+    Celsius_Labels = md("**europeans**"),
+    Fahrenheit_Lab   = md("**correct**"),
+    Threshold_Year   = md("**kinda maybe definitely </br> probably not likely before**")) -> equiv_table
+gtsave(equiv_table, "who_knows.png")
+
 # Baselines
 community_baselines %>% 
   full_join(stat_baselines) %>%
@@ -69,7 +83,14 @@ community_results %>%
   full_join(crossing_points) %>%
   filter(Year == Threshold_Year) %>%
   full_join(community_baselines) %>%
+  mutate(region = str_remove(region, " - statistical zone overlap")) %>%
   arrange(region, Threshold) -> all_results
+
+all_results %>% 
+  left_join(common_names) -> results_table
+
+# Save out for change table 
+write_rds(results_table, file = here("data", "results_table.rds"))
 
 # Increasing species (emerging opportunities)
 all_results %>%
@@ -79,7 +100,31 @@ all_results %>%
   pivot_wider(names_from = Threshold, values_from = availability) %>%
   rename("baseline" = "0", "two" = "2") %>%
   mutate(Perc_Change = ((two-baseline)/baseline * 100)) %>% 
-  filter(Perc_Change >= 50) %>%
+  filter(Perc_Change >= 100) %>%
   arrange(desc(Perc_Change)) -> emerging_species # may wanna check on this one...
 
+emerging_species %>%
+  select(region, species) %>%
+  left_join(common_names) %>%
+  select(region, species, COMNAME) -> emerging_species
+
+# Read in selected species by port and attach emerging species ## 3/15 Note: Drop surf clam & ocean quahog
+select_species <- read_csv(here("data", "ports_filtered.csv")) %>%
+  rename("region" = "PORT") %>%
+  left_join(common_names) %>%
+  filter(!COMNAME %in% c("Surf clam", "Ocean quahog clam", "Hagfish", "Atlantic menhaden"))
+
+select_species %>%
+  full_join(emerging_species) %>% 
+  filter(!COMNAME %in% c("Surf clam", "Ocean quahog clam", "Hagfish", "Atlantic menhaden")) %>%
+  select(region, species, COMNAME) -> select_species
+
 # US Density (Availability * 5.71)
+select_species %>%
+  left_join(all_results) %>%
+  mutate(us_density = (availability*5.71),
+         Fahrenheit_Lab = as.character(Fahrenheit_Lab)) %>%
+  arrange(Threshold) -> all_communities # ugh
+
+# save out as rds to plot
+write_rds(all_communities, file = here("data", "all_communities.rds"))

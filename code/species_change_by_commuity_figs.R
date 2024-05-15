@@ -7,6 +7,7 @@ library(here)
 library(patchwork)
 
 # read in prepped community results
+all_communities <- readRDS(here("data", "all_communities.rds"))
 
 # plotting function 
 # will need to plot for each individual species and then group by port
@@ -16,19 +17,30 @@ plot_func <- function(x,y){
       #geom_smooth(aes(x = Fahrenheit_Lab, y = us_density, group = Common_Name), method = "glm", color = "#EA4F12", se=FALSE) +
       ylab("Availability (pounds per square mile)") + 
       xlab("Increase in Sea Surface Temperature") +
-      ggtitle(Clean_Name) +
+      ggtitle(y) +
       scale_fill_manual(values = c("#00736D", "#00608A")) +
       theme_gmri(legend.position = "none",
-                 axis.text.y = element_text(size = 20),
-                 axis.text.x = element_text(size = 18),
+                 axis.text.y = element_text(size = 17), #17
+                 axis.text.x = element_text(size = 16), #16
                  axis.title = element_blank())}
 
 # Arrange by port
 arrange_func <- function(x,y){
-  list <- x$Plot
+  list <- x$plot
   wrap <- wrap_plots(list, nrow = 2)
   print(wrap)
   
-  filename = paste(y, "landings" , sep="_")
-  ggsave(wrap, file = paste("Temp_Results/Species Change/US_Customary/", filename, ".png", sep=""), width = 22, height = 8.5, units = "in")
+  filename = paste(y, "change" , sep="_")
+  ggsave(wrap, file = paste("outputs/species change/", filename, ".png", sep=""), width = 22, height = 8.5, units = "in")
 } # this file path will likely change 
+
+all_communities %>% 
+  group_by(region, COMNAME) %>% 
+  nest() %>% 
+  mutate(plot = map2(data, COMNAME, plot_func)) -> all_communities
+
+all_communities %>% 
+  arrange(region, COMNAME) %>%
+  group_by(region) %>%
+  nest() %>%
+  mutate(port_plot = map2(data, region, arrange_func)) -> all_communities

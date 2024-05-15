@@ -13,15 +13,21 @@ ports        <- read.csv("data/ports_filtered.csv")
 common_names <- read.csv("data/common_names.csv")
 landings     <- read.csv("data/landings.csv")
 
+me <- landings %>% filter(STATE == "ME") %>% arrange(PORT.NAME)
+unique(me$PORT.NAME)
+
 # Tidy GARFO Data ####
 landings <- landings %>%
   dplyr::select(YEAR, PORT.NAME, STATE, SPPNAME, LANDED.LBS, LIVE.LBS, VALUE) %>%
   filter(YEAR >= 1985) %>%
   unite(PORT.NAME, STATE, col="PORT", sep=", ") %>%
-  filter(PORT %in% ports$PORT) %>%
+  filter(PORT %in% ports$PORT) %>% # | PORT %in% c("KITTERY, ME", "MT. DESERT, ME", "LUBEC, ME", "TREMONT, ME")) %>%
   mutate(LANDED.LBS = parse_number(LANDED.LBS),
          VALUE = parse_number(VALUE)) %>%
+  drop_na() %>% # river herring in NJ messing everything up
   full_join(common_names)
+
+unique(landings$PORT)
 
 # Totals ####
 total_annual <- landings %>% 
@@ -41,6 +47,24 @@ landings %>%
   mutate(across(c(LANDED.LBS, VALUE))/1000000) %>%
   nest(DATA = YEAR:VALUE) %>% 
   full_join(total_annual) -> total_annual
+
+# Grabbing total averages for report text
+total_averages <- landings %>%
+  filter(YEAR %in% seq(2012,2021)) %>%
+  group_by(PORT, YEAR) %>%
+  summarise(TOTAL.LBS   = sum(LANDED.LBS),
+            TOTAL.VALUE = sum(VALUE)) %>% 
+  summarise(MEAN.LBS    = mean(TOTAL.LBS),
+            MEAN.VALUE  = mean(TOTAL.VALUE)) %>%
+  mutate(across(c(MEAN.LBS, MEAN.VALUE))/1000000)
+  
+yearly_averages <- total_annual %>%
+  unnest(DATA) %>%
+  arrange(PORT)
+
+write_csv(total_averages, here("outputs", "annual_totals.csv"))
+write_csv(yearly_averages, here("outputs", "yearly_averages.csv"))
+
 
 # Volume and Value Plots ####
 volume_plot <- function(df){
@@ -88,6 +112,7 @@ totals_plot <- function(df, PORT){
 }
 
 total_annual <- total_annual %>%
+  select(!DATA) %>%
   group_by(PORT) %>%
   nest() %>%
   mutate(PLOT = map2(data, PORT, totals_plot))

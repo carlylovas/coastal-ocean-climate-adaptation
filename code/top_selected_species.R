@@ -39,7 +39,9 @@ garfo_landings %>%
   right_join(select_species) %>%
   group_by(PORT, COMNAME) %>%
   mutate(LANDED.LBS = (LANDED.LBS/1000000)) %>%
-  nest() -> select_species
+  nest() %>% 
+  arrange(COMNAME) %>% 
+  filter(!COMNAME == "Atlantic menhaden") -> select_species
 
 # Plot ####
 plot <- function(x,y){
@@ -68,4 +70,5 @@ select_species %>%
   mutate(plot = map2(data, COMNAME, plot)) %>%
   group_by(PORT) %>%
   nest() %>%
+  arrange(PORT) %>%
   mutate(patchwork = map2(data, PORT, patchwork)) 

@@ -7,6 +7,7 @@ library(gt)
 library(scales)
 library(webshot2)
 library(patchwork)
+library(here)
 
 # Read in required data ####
 ports        <- read.csv("data/ports_filtered.csv")
@@ -17,9 +18,9 @@ landings     <- read.csv("data/landings.csv")
 # Tidy GARFO landings data ####
 landings <- landings %>%
   dplyr::select(YEAR, PORT.NAME, STATE, SPPNAME, LANDED.LBS, LIVE.LBS, VALUE) %>%
-  filter(YEAR >= 2012) %>%
+  filter(YEAR %in% seq(2012,2021)) %>%
   unite(PORT.NAME, STATE, col="PORT", sep=", ") %>%
-  filter(PORT %in% ports$PORT) %>%
+  filter(PORT %in% ports$PORT | PORT %in% c("KITTERY, ME", "MT. DESERT, ME", "LUBEC, ME", "TREMONT, ME")) %>%
   mutate(LANDED.LBS = parse_number(LANDED.LBS),
          VALUE = parse_number(VALUE)) %>%
   drop_na()%>%
@@ -28,13 +29,15 @@ landings <- landings %>%
 # Average lbs and $$ per species per port across all years (values in millions)
 species_landings <- landings %>%
   group_by(PORT, SPPNAME, COMNAME) %>%
-  nest() %>%
-  mutate(AVG.LANDED.LBS = map_dbl(data, function(df){mean(df$LANDED.LBS, na.rm=TRUE)}),
-         AVG.VALUE      = map_dbl(data, function(df){mean(df$VALUE, na.rm=TRUE)}))
+  summarise(AVG.LANDED.LBS = mean(LANDED.LBS),
+            AVG.VALUE      = mean(VALUE))
+  #nest() %>%
+  #mutate(AVG.LANDED.LBS = map_dbl(data, function(df){mean(df$LANDED.LBS, na.rm=TRUE)}),
+         #AVG.VALUE      = map_dbl(data, function(df){mean(df$VALUE, na.rm=TRUE)}))
 
 # Ranks ####
 weight_ranks <- species_landings %>%
-  select(PORT, SPPNAME, COMNAME, data, AVG.LANDED.LBS) %>%
+  select(PORT, SPPNAME, COMNAME, AVG.LANDED.LBS) %>%
   arrange(desc(AVG.LANDED.LBS))%>%
   group_by(PORT)%>%
   nest() %>%
@@ -45,7 +48,7 @@ weight_ranks <- species_landings %>%
   rename("WEIGHT.RANK" = "rowid") 
 
 value_ranks <- species_landings %>%
-  select(PORT, SPPNAME, COMNAME, data, AVG.VALUE) %>%
+  select(PORT, SPPNAME, COMNAME, AVG.VALUE) %>%
   arrange(desc(AVG.VALUE))%>%
   group_by(PORT)%>%
   nest() %>%
@@ -57,18 +60,22 @@ value_ranks <- species_landings %>%
 
 species_ranks <- weight_ranks %>%
   full_join(value_ranks) %>%
-  relocate("data", .after = "PORT") %>%
-  relocate("VALUE.RANK", .after = "WEIGHT.RANK") %>%
-  rename("DATA" = "data") 
+  # relocate("data", .after = "PORT") %>%
+  relocate("VALUE.RANK", .after = "WEIGHT.RANK") # %>%
+  # rename("DATA" = "data") 
 
 species_ranks %>%
   filter(WEIGHT.RANK %in% seq(1,10) & (VALUE.RANK %in% seq(1,10))) %>%
   ungroup(PORT) %>%
   select(COMNAME) %>% distinct()
 
+species_ranks %>% 
+  filter(PORT == "GLOUCESTER, MA") %>%
+  summarise(total = sum(AVG.VALUE))
+
 others <- species_ranks %>%
   filter(WEIGHT.RANK > 10 & VALUE.RANK > 10) %>%
-  unnest(DATA) %>% 
+  # unnest(DATA) %>% 
   group_by(PORT) %>%
   summarise(AVG.LANDED.LBS = sum(AVG.LANDED.LBS),
             AVG.VALUE = sum(AVG.VALUE))%>%
@@ -95,6 +102,10 @@ plots <- species_ranks %>%
   nest() %>% 
   filter(PORT %in% c("STONINGTON, ME",
                      "PORTLAND, ME",
+                     "LUBEC, ME",
+                     "TREMONT, ME",
+                     "MT. DESERT, ME",
+                     "KITTERY, ME", 
                      "PORTSMOUTH, NH",
                      "GLOUCESTER, MA",
                      "BOSTON, MA",
@@ -184,14 +195,14 @@ plots %>%
 save_gt <- function(TABLE, PORT){
   gt <- TABLE
   filename=paste(PORT, "table", sep="_")
-  gtsave(gt, file = paste0(filename, ".png"), path = "outputs/landings/tables")
+  gtsave(gt, filename = paste0(filename, ".png"), path = here("outputs", "landings", "tables/"))
 }
 
 plots <- plots %>%
   mutate(IMAGE = map2(TABLE, PORT, save_gt))
 
 # Read back in as png, wrap and attach to donuts
-path <- "outputs/landings/tables"
+path <- here("outputs", "landings", "tables/")
 
 read_png <- function(file_name) {
   out <- png::readPNG(file_name, native = TRUE) 
