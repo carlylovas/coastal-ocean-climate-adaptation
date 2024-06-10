@@ -1,30 +1,17 @@
-,PORT,lat,lon,URL
-1,"Stonington, CT",41.3358915,-71.9058854,https://www.gmri.org/
-2,"New London, CT",41.3556539,-72.0995209,https://www.gmri.org/
-3,"Portland, ME",43.661471,-70.2553259,https://gmri.org/documents/355/Portland_ME.pdf
-4,"Rockland, ME",44.1036914,-69.1089293,https://www.gmri.org/
-5,"Friendship, ME",43.9838019,-69.3341229,https://www.gmri.org/
-6,"Harpswell, ME",43.7864342,-69.9598343,https://www.gmri.org/
-7,"Stonington, ME",44.156192,-68.6666926,https://gmri.org/documents/356/Stonington_ME.pdf
-8,"Eastport, ME",44.9061906,-66.9899785,https://www.gmri.org/
-9,"York, ME",43.1617483,-70.6482581,https://www.gmri.org/
-10,"Ocean City, MD",38.3365032,-75.0849058,https://www.gmri.org/
-11,"Boston, MA",42.3600825,-71.0588801,https://www.gmri.org/
-12,"Gloucester, MA",42.6159285,-70.6619888,https://www.gmri.org/
-13,"Chatham, MA",41.6820897,-69.9597664,https://www.gmri.org/
-14,"New Bedford, MA",41.6362152,-70.934205,https://www.gmri.org/
-15,"Plymouth, MA",41.9584457,-70.6672621,https://www.gmri.org/
-16,"Provincetown, MA",42.0584412,-70.1786425,https://www.gmri.org/
-17,"Scituate, MA",42.195929,-70.7258633,https://www.gmri.org/
-18,"Portsmouth, NH",43.0717552,-70.7625532,https://www.gmri.org/
-19,"Newington, NH",43.1000871,-70.8336668,https://www.gmri.org/
-20,"Atlantic City, NJ",39.3642834,-74.4229266,https://www.gmri.org/
-21,"Cape May, NJ",38.9351125,-74.9060053,https://www.gmri.org/
-22,"Montauk, NY",41.0359353,-71.9545146,https://www.gmri.org/
-23,"Newport, RI",41.4901024,-71.3128285,https://www.gmri.org/
-24,"Point Judith, RI",41.3653803,-71.4867225,https://www.gmri.org/
-25,"Newport News, VA",37.0870821,-76.4730122,https://www.gmri.org/
-26,"Gouldsboro, ME",44.47852,-68.039543,https://www.gmri.org/
-27,"Beals Island, ME",44.5114678,-67.6108266,https://www.gmri.org/
-28,"Point Pleasant, NJ",40.0831714,-74.0681931,https://www.gmri.org/
-29,"Barnegat Light, NJ",39.7294616,-74.1232264,https://gmri.org/documents/354/Barnegat_Light_NJ.pdf
+PORT,lat,lon,URL
+"Boston, MA",42.3600825,-71.0588801,https://gmri.org/documents/439/Boston.pdf
+"Cape May, NJ",38.9351125,-74.9060053,https://gmri.org/documents/437/Cape_May.pdf
+"Chatham, MA",41.6820897,-69.9597664,https://gmri.org/documents/424/Chatham.pdf
+"Gloucester, MA",42.6159285,-70.6619888,https://gmri.org/documents/438/Gloucester.pdf
+"Montauk, NY",41.0359353,-71.9545146,https://gmri.org/documents/435/Montauk.pdf
+"New Bedford, MA",41.6362152,-70.934205,https://gmri.org/documents/436/New_Bedford.pdf
+"New London, CT",41.3556539,-72.0995209,https://gmri.org/documents/434/New_London.pdf
+"Newport News, VA",37.0870821,-76.4730122,https://gmri.org/documents/431/Newport_News.pdf
+"Newport, RI",41.4901024,-71.3128285,https://gmri.org/documents/428/Newport.pdf
+"Point Judith, RI",41.3653803,-71.4867225,https://gmri.org/documents/429/Point_Judith.pdf
+"Point Pleasant, NJ",40.0831714,-74.0681931,https://gmri.org/documents/430/Point_Pleasant.pdf
+"Portland, ME",43.661471,-70.2553259,https://gmri.org/documents/432/Portland.pdf
+"Portsmouth, NH",43.0717552,-70.7625532,https://gmri.org/documents/433/Portsmouth.pdf
+"Scituate, MA",42.195929,-70.7258633,https://gmri.org/documents/426/Scituate.pdf
+"Stonington, CT",41.3358915,-71.9058854,https://gmri.org/documents/425/Stonington_CT.pdf
+"Stonington, ME",44.156192,-68.6666926,https://gmri.org/documents/427/Stonington_ME.pdf
