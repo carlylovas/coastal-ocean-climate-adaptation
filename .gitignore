@@ -1,6 +1,12 @@
+# User Data
 .Rproj.user
 .Rhistory
+
+# File types
 .RData
 .Ruserdata
+.rds
+.pdf
+.png
 
 /.quarto/
