@@ -52,18 +52,39 @@ crossing_points %>%
 
 ## Crossing points table ####
 library(gt)
-crossing_points %>% 
-  # filter(Scenario == "CMIP6-SSP5_85" & Variable == "SST") %>%
-  select(Threshold_Year, Celsius_Labels, Fahrenheit_Lab) %>%
-  relocate(Threshold_Year, .after = Fahrenheit_Lab) %>%
-  gt() %>%
-  tab_header(title = md("**Temperature Crossing Points**"), 
-             subtitle = md("*based on vibez*")) %>%
-  cols_label(
-    Celsius_Labels = md("**europeans**"),
-    Fahrenheit_Lab   = md("**correct**"),
-    Threshold_Year   = md("**kinda maybe definitely </br> probably not likely before**")) -> equiv_table
-gtsave(equiv_table, "who_knows.png")
+# crossing_points %>% 
+#   # filter(Scenario == "CMIP6-SSP5_85" & Variable == "SST") %>%
+#   select(Threshold_Year, Celsius_Labels, Fahrenheit_Lab) %>%
+#   relocate(Threshold_Year, .after = Fahrenheit_Lab) %>%
+#   gt() %>%
+#   tab_header(title = md("**Temperature Crossing Points**"), 
+#              subtitle = md("*Based on SSP5-8.5 Climate Projections*")) %>%
+#   cols_label(
+#     Celsius_Labels = md("**Celsius**"),
+#     Fahrenheit_Lab   = md("**Fahrenheit**"),
+#     Threshold_Year   = md("**As soon as**")) %>% 
+#   tab_style(
+#     style = cell_text(size = "large"),
+#     locations = cells_body() 
+#   ) %>%
+#   tab_style(
+#     style = cell_text(size = "x-large"),
+#     locations = cells_title(groups = c("title", "subtitle"))) %>%
+#   tab_style(
+#     style = cell_text(size = "large"),
+#     locations = cells_column_labels(columns = everything())) %>%
+#   cols_width(everything()~px(110)) -> equiv_table
+# 
+# gtsave(equiv_table, "crossing_points_table.png")
+
+# wide crossing points table
+# crossing_points_wide <- read_csv(here("data", "crossing_points_wide.csv"))
+
+# crossing_points_wide %>% 
+#   gt() %>% 
+#   tab_header(title = md("**Temperature Crossing Points**"), 
+#              subtitle = md("*Based on SSP5-8.5 Climate Projections*")) 
+  
 
 # Baselines
 community_baselines %>% 
@@ -128,3 +149,4 @@ select_species %>%
 
 # save out as rds to plot
 write_rds(all_communities, file = here("data", "all_communities.rds"))
+

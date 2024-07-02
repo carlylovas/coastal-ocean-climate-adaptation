@@ -50,16 +50,16 @@ plot <- function(x,y){
     ggtitle(y) +
     scale_fill_manual(values = "#00736D") +
     theme_gmri(legend.position = "none",
-               axis.text = element_text(size = 20),
+               axis.text = element_text(size = 18),
                axis.title = element_blank(), 
-               plot.title = element_text(size=25))
+               plot.title = element_text(size=25.5))
   
   return(out)
 }
 
 patchwork <-function(x, PORT){
   list <- x$plot
-  wrap <- wrap_plots(list, ncol = 3)
+  wrap <- wrap_plots(list, nrow = 2)
   print(wrap)
   
   filename = paste(PORT, "landings" , sep="_")
