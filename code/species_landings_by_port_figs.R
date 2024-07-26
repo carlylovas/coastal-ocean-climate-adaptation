@@ -17,14 +17,21 @@ landings     <- read.csv("data/landings.csv")
 # Tidy GARFO landings data ####
 landings <- landings %>%
   select(YEAR, PORT.NAME, STATE, SPPNAME, LANDED.LBS, VALUE) %>%
-  filter(YEAR %in% seq(2012,2021)) %>%
+  # filter(YEAR %in% seq(2012,2021)) %>%
   unite(PORT.NAME, STATE, col="PORT", sep=", ") %>%
-  filter(PORT %in% ports$PORT) %>%
+  # filter(PORT %in% ports$PORT) %>%
   mutate(LANDED.LBS = parse_number(LANDED.LBS),
          VALUE = parse_number(VALUE)) %>%
   filter(!SPPNAME == "HERRING, RIVER") %>% # only shows up in Cape May in 2015, has no value 
   left_join(common_names)
   
+landings %>% 
+  filter(PORT %in% c("KITTERY, ME", "TREMONT, ME", "LUBEC, ME")) %>% 
+  select(YEAR, PORT, SPPNAME, COMNAME, LANDED.LBS, VALUE) %>% 
+  arrange(PORT) -> steph
+
+write.csv(steph, "kittery_tremont_lubec_landings.csv")
+
 # Average lbs and $$ per species per port across all years 
 # Not all species have 10 years worth of data...
 species_landings <- landings %>%

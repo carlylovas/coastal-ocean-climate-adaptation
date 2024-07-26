@@ -24,6 +24,12 @@ landings <- garfo_landings %>%
   drop_na()%>%
   full_join(common_names)
 
+# Fix Stonington 
+landings$COMNAME[landings$PORT == "STONINGTON, ME" & landings$SPPNAME == "CRAB, JONAH"] = "Cancer crab"
+landings$COMNAME[landings$PORT == "STONINGTON, ME" & landings$SPPNAME == "CRAB, ROCK"] = "Cancer crab"
+landings$COMNAME[landings$PORT == "STONINGTON, ME" & landings$SPPNAME == "CRAB, NK"] = "Cancer crab"
+
+
 # Filter landings data to select species ####
 garfo_landings %>%
   dplyr::select(YEAR, PORT.NAME, STATE, SPPNAME, LANDED.LBS, LIVE.LBS, VALUE) %>%
@@ -72,3 +78,4 @@ select_species %>%
   nest() %>%
   arrange(PORT) %>%
   mutate(patchwork = map2(data, PORT, patchwork)) 
+
